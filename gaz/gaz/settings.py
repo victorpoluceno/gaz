@@ -112,6 +112,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, "gaz", "templates"),
 )
 
 INSTALLED_APPS = (
@@ -123,7 +124,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'gaz.home'
+    'gaz.home',
+    'gaz.login',
+    'gaz.product'
 )
 
 INTERNAL_IPS = ('127.0.0.1', '10.0.2.2')
@@ -134,6 +137,10 @@ MIDDLEWARE_CLASSES += (
 INSTALLED_APPS += (
     'debug_toolbar',
 )
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
